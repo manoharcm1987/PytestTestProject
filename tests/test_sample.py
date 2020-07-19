@@ -21,11 +21,14 @@ class TestSample():
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument('--ignore-certificate-errors')
         chrome_options.add_argument("--test-type")
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_experimental_option("useAutomationExtension", False);
         # chrome_options.add_argument("--disable-dev-shm-usage")
         # chrome_options.add_argument("--disable-gpu")
         chrome_options.add_experimental_option("excludeSwitches", ['enable-automation']);
-        self.driver = Chrome(options=chrome_options, executable_path='C:/Old D drive/SeleniumWorkSpace/TestProject/drivers/chromedriver.exe')
+        self.driver = Chrome(options=chrome_options) #executable_path='./TestProject/drivers/chromedriver.exe')
         # Wait implicitly for elements to be ready before attempting interactions
         self.driver.implicitly_wait(5)
         self.driver.maximize_window()
