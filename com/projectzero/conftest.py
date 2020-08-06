@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 import pytest
 import json
 
-CONFIG_PATH = '/utilities/config.json'
+CONFIG_PATH = 'com/projectzero/utilities/config.json'
 DEFAULT_WAIT_TIME = 10
 SUPPORTED_BROWSERS = ['chrome', 'firefox']
 
@@ -47,8 +47,9 @@ def get_browser(config_browser, config_wait_time):
     # chrome_options.add_argument("--disable-gpu")
     chrome_options.add_experimental_option("excludeSwitches", ['enable-automation']);
     if config_browser == 'chrome':
-        driver = Chrome(options=chrome_options,
-            executable_path='C:/Old D drive/SeleniumWorkSpace/TestProject/drivers/chromedriver.exe')
+        driver = Chrome(options=chrome_options,executable_path='C:/Old D drive/SeleniumWorkSpace/TestProject/com/projectzero/drivers/chromedriver.exe')
+        #driver = Chrome(options=chrome_options)
+
     elif config_browser == 'Firefox':
         raise Exception(f'{config_browser} is not supported for now')
     else:
